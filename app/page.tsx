@@ -61,7 +61,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 md:grid-cols-2 md:items-center">
           <div className="animate-fade-up">
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium">
-              <Star size={12} className="fill-accent text-accent" />
+              <Star size={12} className="fill-primary-light text-primary-light" />
               Rated 4.8 by 2,000+ households
             </p>
             <h1 className="mt-4 text-balance font-display text-4xl leading-[1.08] sm:text-5xl">
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-primary-dark hover:bg-accent-dark"
+                className="btn-3d-light inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-primary-dark hover:bg-sage-light"
               >
                 Browse products <ArrowRight size={16} />
               </Link>
@@ -118,7 +118,7 @@ export default function Home() {
             <Link
               key={c.id}
               href={`/products?category=${c.id}`}
-              className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl"
+              className="surface-3d group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl"
             >
               <Image
                 src={c.image}
@@ -162,7 +162,7 @@ export default function Home() {
         <h2 className="font-display text-2xl text-primary">How Pharmex works</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {steps.map((step, i) => (
-            <div key={step.title} className="relative rounded-2xl border border-sage bg-white p-6">
+            <div key={step.title} className="surface-3d relative rounded-2xl border border-sage bg-white p-6">
               <span className="font-display text-4xl text-sage">{`0${i + 1}`}</span>
               <step.icon className="mt-3 text-primary" size={22} />
               <p className="mt-3 font-display text-lg text-foreground">{step.title}</p>
@@ -210,10 +210,10 @@ export default function Home() {
         <h2 className="font-display text-2xl text-primary">What customers say</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {testimonials.map((t) => (
-            <div key={t.name} className="rounded-2xl border border-sage bg-white p-6">
-              <div className="flex gap-0.5 text-accent">
+            <div key={t.name} className="surface-3d rounded-2xl border border-sage bg-white p-6">
+              <div className="flex gap-0.5 text-primary-light">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={14} className="fill-accent" />
+                  <Star key={i} size={14} className="fill-primary-light" />
                 ))}
               </div>
               <p className="mt-3 text-sm text-foreground/70">&ldquo;{t.quote}&rdquo;</p>
@@ -226,7 +226,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-5 pb-16">
-        <div className="flex flex-col items-start gap-4 rounded-3xl bg-accent px-8 py-10 text-primary-dark sm:flex-row sm:items-center sm:justify-between">
+        <div className="surface-3d flex flex-col items-start gap-4 rounded-3xl border border-sage bg-white px-8 py-10 text-primary-dark sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-display text-2xl">Need something today?</p>
             <p className="mt-1 text-sm text-primary-dark/70">
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 rounded-full bg-primary-dark px-6 py-3 text-sm font-semibold text-white hover:bg-primary"
+            className="btn-3d inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             Start shopping <ArrowRight size={16} />
           </Link>

@@ -56,7 +56,7 @@ export default function Navbar() {
 
         <Link
           href="/cart"
-          className="relative flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-dark"
+          className="btn-3d relative flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-dark"
         >
           <ShoppingCart size={18} />
           <span className="hidden sm:inline">Cart</span>

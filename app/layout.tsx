@@ -3,6 +3,7 @@ import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingCartButton from "@/components/FloatingCartButton";
 
 export const metadata: Metadata = {
   title: "Pharmex — Mart & Pharmacy",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <FloatingCartButton />
         </CartProvider>
       </body>
     </html>

@@ -18,7 +18,7 @@ export default function CartPage() {
         </p>
         <Link
           href="/products"
-          className="mt-6 inline-block rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
+          className="btn-3d mt-6 inline-block rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
         >
           Browse products
         </Link>
@@ -30,7 +30,7 @@ export default function CartPage() {
     <div className="mx-auto max-w-3xl px-5 py-10">
       <h1 className="font-display text-3xl text-primary">Your cart</h1>
 
-      <div className="mt-6 divide-y divide-sage rounded-2xl border border-sage bg-white">
+      <div className="surface-3d mt-6 divide-y divide-sage rounded-2xl border border-sage bg-white">
         {lines.map((line) => (
           <div key={line.id} className="flex items-center gap-4 p-4">
             <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-sage-light">
@@ -83,7 +83,7 @@ export default function CartPage() {
         </p>
       )}
 
-      <div className="mt-6 flex items-center justify-between rounded-2xl border border-sage bg-white p-4">
+      <div className="mt-6 flex items-center justify-between surface-3d rounded-2xl border border-sage bg-white p-4">
         <span className="font-medium">Subtotal</span>
         <span className="font-display text-xl text-primary">
           Rs. {subtotal.toLocaleString()}
@@ -92,7 +92,7 @@ export default function CartPage() {
 
       <Link
         href="/checkout"
-        className="mt-6 block rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-white hover:bg-primary-dark"
+        className="btn-3d mt-6 block rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-white hover:bg-primary-dark"
       >
         Proceed to checkout
       </Link>

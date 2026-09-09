@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FBFAF6;
-  --foreground: #17201D;
-  --primary: #0F4C42;
-  --primary-dark: #0A332C;
-  --primary-light: #1A6E5F;
-  --accent: #E8A33D;
-  --accent-dark: #C97F1E;
-  --accent-light: #F4C989;
-  --sage: #D8E3DC;
-  --sage-light: #EEF3F0;
-  --clay: #C1543C;
-  --clay-light: #F6E3DE;
-  --gold: #B8935A;
+  --background: #F4F8FF;
+  --foreground: #0F1F3D;
+  --primary: #1655C4;
+  --primary-dark: #0B3B8C;
+  --primary-light: #4C86E8;
+  --accent: #FFFFFF;
+  --accent-dark: #1655C4;
+  --accent-light: #EAF1FF;
+  --sage: #D8E5FB;
+  --sage-light: #EEF4FF;
+  --clay: #D2452F;
+  --clay-light: #FCEAE6;
+  --gold: #4C86E8;
   --font-display: "Fraunces";
   --font-body: "Work Sans";
 }
@@ -72,12 +72,98 @@ h1, h2, h3, .font-display {
   animation: toast-in 0.25s ease-out both;
 }
 
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float-y 3.2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-up, .animate-toast {
+  .animate-fade-up, .animate-toast, .animate-float {
     animation: none;
   }
 }
 
 .text-balance {
   text-wrap: balance;
+}
+
+/* --- 3D depth system --- */
+
+/* Raised surface: cards, panels */
+.surface-3d {
+  box-shadow:
+    0 1px 2px rgba(15, 31, 61, 0.06),
+    0 8px 20px -6px rgba(22, 85, 196, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.surface-3d:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 8px rgba(15, 31, 61, 0.08),
+    0 18px 32px -10px rgba(22, 85, 196, 0.22);
+}
+
+/* Pressable 3D button: solid colored buttons with a "keycap" edge */
+.btn-3d {
+  position: relative;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 6px 0 rgba(11, 59, 140, 0.55),
+    0 10px 18px -4px rgba(22, 85, 196, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 8px 0 rgba(11, 59, 140, 0.55),
+    0 16px 22px -4px rgba(22, 85, 196, 0.5);
+}
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 2px 0 rgba(11, 59, 140, 0.55),
+    0 4px 8px -2px rgba(22, 85, 196, 0.4);
+}
+
+/* Light "keycap" variant, for white buttons on blue backgrounds */
+.btn-3d-light {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 6px 0 rgba(198, 216, 245, 0.9),
+    0 10px 18px -4px rgba(11, 59, 140, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn-3d-light:hover {
+  transform: translateY(-2px);
+}
+.btn-3d-light:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 2px 0 rgba(198, 216, 245, 0.9),
+    0 4px 8px -2px rgba(11, 59, 140, 0.3);
+}
+
+/* Floating action button */
+.fab-3d {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 8px 0 rgba(11, 59, 140, 0.55),
+    0 20px 30px -8px rgba(22, 85, 196, 0.55);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.fab-3d:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+.fab-3d:active {
+  transform: translateY(3px) scale(0.98);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 3px 0 rgba(11, 59, 140, 0.55),
+    0 8px 14px -4px rgba(22, 85, 196, 0.5);
 }

@@ -37,7 +37,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
       </div>
       <button
         onClick={handleAdd}
-        className="flex-1 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark sm:flex-none"
+        className="btn-3d flex-1 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark sm:flex-none"
       >
         {added ? "Added to cart" : "Add to cart"}
       </button>

@@ -13,7 +13,7 @@ export default function ProductCard({ product }: { product: Product }) {
     : null;
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-sage bg-white transition hover:border-primary/40 hover:shadow-md">
+    <div className="surface-3d group relative flex flex-col overflow-hidden rounded-2xl border border-sage bg-white transition hover:border-primary/40">
       <Link href={`/products/${product.id}`} className="relative aspect-square w-full overflow-hidden bg-sage-light">
         <Image
           src={product.image}
@@ -29,7 +29,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </span>
           )}
           {discount && (
-            <span className="rounded-full bg-accent px-2 py-1 text-[10px] font-semibold text-primary-dark">
+            <span className="rounded-full border border-primary/10 bg-accent px-2 py-1 text-[10px] font-semibold text-primary-dark shadow-sm">
               {discount}% off
             </span>
           )}
@@ -50,7 +50,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <p className="text-xs text-foreground/50">{product.unit}</p>
 
         <div className="flex items-center gap-1 text-xs text-foreground/60">
-          <Star size={12} className="fill-accent text-accent" />
+          <Star size={12} className="fill-primary-light text-primary-light" />
           <span>{product.rating}</span>
           <span className="text-foreground/30">({product.reviewCount})</span>
         </div>
@@ -72,7 +72,7 @@ export default function ProductCard({ product }: { product: Product }) {
               addItem(product, 1);
             }}
             aria-label={`Add ${product.name} to cart`}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white hover:bg-primary-dark"
+            className="fab-3d flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white hover:bg-primary-dark"
           >
             <Plus size={16} />
           </button>
