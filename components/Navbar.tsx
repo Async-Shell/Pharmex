@@ -50,26 +50,28 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        <Link
-          href="/cart"
-          className="btn-3d relative flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-dark"
-        >
-          <ShoppingCart size={18} />
-          <span className="hidden sm:inline">Cart</span>
-          {count > 0 && (
-            <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs font-bold text-primary-dark">
-              {count}
-            </span>
-          )}
-        </Link>
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 md:ml-0">
+          <Link
+            href="/cart"
+            className="btn-3d relative flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-dark"
+          >
+            <ShoppingCart size={18} />
+            <span className="hidden sm:inline">Cart</span>
+            {count > 0 && (
+              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs font-bold text-primary-dark">
+                {count}
+              </span>
+            )}
+          </Link>
 
-        <button
-          onClick={() => setMenuOpen((v) => !v)}
-          className="shrink-0 rounded-full border border-sage p-2.5 md:hidden"
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X size={18} /> : <Menu size={18} />}
-        </button>
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="shrink-0 rounded-full border border-sage p-2.5 md:hidden"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
