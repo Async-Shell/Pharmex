@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ShoppingCart, Search, Menu, X, Pill } from "lucide-react";
+import { ShoppingCart, Search, Menu, X } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 
 export default function Navbar() {
@@ -23,13 +24,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-sage bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3.5">
-        <Link href="/" className="flex items-center gap-1.5 shrink-0">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
-            <Pill size={16} />
-          </span>
-          <span className="font-display text-2xl font-semibold text-primary">
-            Pharmex
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image src="/logo.svg" alt="Pharmex" width={160} height={48} priority className="h-10 w-auto" />
         </Link>
 
         <form
